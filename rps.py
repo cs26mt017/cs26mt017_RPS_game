@@ -1,3 +1,5 @@
+import random 
+
 def main():
     print("Welcome to Rock Paper Scissors!")
     print()
@@ -11,7 +13,12 @@ def main():
     print("7. If both players select the same one, it is a tie.")
     print()
 
-    
+    player = input("Enter your choice (rock, paper, or scissors): ")
+    choices = ["rock", "paper", "scissors"]
+    computer = random.choice(choices)
+    print("You selected:", player)
+    print("Computer selected:", computer)
+
 
 
 if __name__ == "__main__":
