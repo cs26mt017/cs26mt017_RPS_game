@@ -13,25 +13,32 @@ def main():
     print("7. If both players select the same one, it is a tie.")
     print()
 
-    player_choice = input("Enter your choice (rock, paper, or scissors): ")
     choices = ["rock", "paper", "scissors"]
-    computer_choice = random.choice(choices)
-    print("You selected:", player_choice)
-    print("Computer selected:", computer_choice)
+    round_number = 1
 
-    if player_choice == computer_choice:
-        print("It is a tie")
-    elif(
-        (player_choice == "rock" and computer_choice == "scissors") or
-        (player_choice == "scissors" and computer_choice == "paper") or
-        (player_choice == "paper" and computer_choice == "rock")
-    ):
-        print("You Wins!")
-    else:
-        print("Computer Wins!")
+    while True:
+        print(f"--- Round {round_number} ---")
+
+        player_choice = input("Enter your choice (rock, paper, or scissors): ")
+        computer_choice = random.choice(choices)
+        print("You selected:", player_choice)
+        print("Computer selected:", computer_choice)
+        if player_choice == computer_choice:
+            print("It is a tie!, Rematching ")
+            print()
+            round_number += 1
+            continue
+        elif(
+            (player_choice == "rock" and computer_choice == "scissors") or
+            (player_choice == "scissors" and computer_choice == "paper") or
+            (player_choice == "paper" and computer_choice == "rock")
+        ):
+            print("You Wins!")
+        else:
+            print("Computer Wins!")
+
+        break
     
-
-
 
 if __name__ == "__main__":
     main()
