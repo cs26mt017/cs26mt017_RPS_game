@@ -8,16 +8,28 @@ def main():
     print("2. Both players reveal their selection to the other player at once")
     print("3. And  the winner is chosen based on what the selections are")
     print("4. Rock beats scissors (by crushing them)")
-    print("5. scissorsbeats paper (by cutting it")
+    print("5. scissors beats paper (by cutting it")
     print("6. paper beats rock (by covering it)")
     print("7. If both players select the same one, it is a tie.")
     print()
 
-    player = input("Enter your choice (rock, paper, or scissors): ")
+    player_choice = input("Enter your choice (rock, paper, or scissors): ")
     choices = ["rock", "paper", "scissors"]
-    computer = random.choice(choices)
-    print("You selected:", player)
-    print("Computer selected:", computer)
+    computer_choice = random.choice(choices)
+    print("You selected:", player_choice)
+    print("Computer selected:", computer_choice)
+
+    if player_choice == computer_choice:
+        print("It is a tie")
+    elif(
+        (player_choice == "rock" and computer_choice == "scissors") or
+        (player_choice == "scissors" and computer_choice == "paper") or
+        (player_choice == "paper" and computer_choice == "rock")
+    ):
+        print("You Wins!")
+    else:
+        print("Computer Wins!")
+    
 
 
 
